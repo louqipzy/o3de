@@ -23,7 +23,7 @@ function(GetOpenMesh)
     # Part 1:  Where do you get the library from?  Make sure to inform the user of the source of the library and any patches applied.
     include(FetchContent)
 
-    set(OPENMESH_GIT_REPO "git@gitlab.vci.rwth-aachen.de:OpenMesh/OpenMesh.git")
+    set(OPENMESH_GIT_REPO "https://gitlab.vci.rwth-aachen.de:9000/OpenMesh/OpenMesh.git")
     set(OPENMESH_GIT_TAG "OpenMesh-11.0")
     set(OPENMESH_GIT_PATCH "${CMAKE_CURRENT_LIST_DIR}/openmesh-o3de-11.0.patch")
 
