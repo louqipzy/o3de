@@ -22,7 +22,7 @@ include(${pal_dir}/PAL_${PAL_PLATFORM_NAME_LOWERCASE}.cmake)
 # If you change these, please change the copy of them below in the installer 
 # section.  That installer section is the ONLY part of the file that is shipped in the installer
 # (SDK) version of the package, the rest of this file is not, so it must be duplicated there.
-set(RECAST_GIT_REPO "https://github.com/recastnavigation/recastnavigation.git")
+set(RECAST_GIT_REPO "git@github.com:recastnavigation/recastnavigation.git")
 set(RECAST_GIT_TAG 5a870d4)
 set(RECAST_GIT_PATCH "${CMAKE_CURRENT_LIST_DIR}/recast-o3de.patch")
 
@@ -87,7 +87,7 @@ endforeach()
 # that gets included in installers.  This is why we need to duplicate the github repo from above
 # and cannot reuse the variables above.  The rest of this file won't be there to refer to.
 set_property(DIRECTORY APPEND PROPERTY O3DE_SUBDIRECTORY_INSTALL_CODE [[
-    set(RECAST_GIT_REPO "https://github.com/recastnavigation/recastnavigation.git")
+    set(RECAST_GIT_REPO "git@github.com:recastnavigation/recastnavigation.git")
     set(RECAST_GIT_TAG 5a870d4)
     message(STATUS "RecastNavigation Gem uses ${RECAST_GIT_REPO} commit 5a870d4 (License: Zlib)")
     

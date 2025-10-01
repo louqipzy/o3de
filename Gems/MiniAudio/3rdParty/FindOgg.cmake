@@ -22,7 +22,7 @@ function(Getogg)
     # Part 1:  Where do you get the library from?  Make sure to inform the user of the source of the library and any patches applied.
     include(FetchContent)
 
-    set(ogg_GIT_REPO "https://github.com/xiph/ogg.git")
+    set(ogg_GIT_REPO "git@github.com:xiph/ogg.git")
     set(ogg_GIT_TAG "v1.3.6")
     set(ogg_GIT_HASH "be05b13e98b048f0b5a0f5fa8ce514d56db5f822") # Better to use pinned hashes for security.
 

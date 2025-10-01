@@ -15,7 +15,7 @@ endif()
 
 # It is still worth notifying people that they are accepting a 3rd Party Library here, and what license it uses, and
 # where to get it.
-set(ogg_GIT_REPO "https://github.com/xiph/ogg.git")
+set(ogg_GIT_REPO "git@github.com:xiph/ogg.git")
 set(ogg_GIT_TAG "v1.3.6")
 message(STATUS "MiniAudio Gem uses ${ogg_GIT_REPO} ${ogg_GIT_TAG} (BSD 3-Clause)")
 
