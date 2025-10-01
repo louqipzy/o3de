@@ -25,7 +25,7 @@ function(Getvorbis)
     # Part 1:  Where do you get the library from?  Make sure to inform the user of the source of the library and any patches applied.
     include(FetchContent)
 
-    set(vorbis_GIT_REPO "https://github.com/xiph/vorbis.git")
+    set(vorbis_GIT_REPO "git@github.com:xiph/vorbis.git")
     set(vorbis_GIT_TAG "v1.3.7")
     set(vorbis_GIT_HASH "0657aee69dec8508a0011f47f3b69d7538e9d262")  # better to use hashes for security
     FetchContent_Declare(

@@ -16,7 +16,7 @@ find_package(ogg)
 
 # It is still worth notifying people that they are accepting a 3rd Party Library here, and what license it uses, and
 # where to get it.
-set(vorbis_GIT_REPO "https://github.com/xiph/vorbis.git")
+set(vorbis_GIT_REPO "git@github.com:xiph/vorbis.git")
 set(vorbis_GIT_TAG "v1.3.7")
 message(STATUS "MiniAudio Gem uses ${vorbis_GIT_REPO} ${vorbis_GIT_TAG} (BSD 3-Clause)")
 

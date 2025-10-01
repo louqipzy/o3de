@@ -20,7 +20,7 @@ if (MINIAUDIO_USE_VORBIS)
 endif()
 # It is still worth notifying people that they are accepting a 3rd Party Library here, and what license it uses, and
 # where to get it.
-set(MINIAUDIO_GIT_REPO "https://github.com/mackron/miniaudio.git")
+set(MINIAUDIO_GIT_REPO "git@github.com:mackron/miniaudio.git")
 set(MINIAUDIO_GIT_TAG "0.11.22")
 message(STATUS "MiniAudio Gem uses ${MINIAUDIO_GIT_REPO} ${MINIAUDIO_GIT_TAG} (MIT No Attribution)")
 

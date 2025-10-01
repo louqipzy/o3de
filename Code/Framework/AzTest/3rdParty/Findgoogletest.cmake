@@ -23,7 +23,7 @@ if (NOT PAL_TRAIT_TEST_GOOGLE_TEST_SUPPORTED)
     return()
 endif()
 
-set(GOOGLETEST_GIT_REPOSITORY "https://github.com/google/googletest.git")
+set(GOOGLETEST_GIT_REPOSITORY "git@github.com:google/googletest.git")
 set(GOOGLETEST_GIT_TAG b514bdc898e2951020cbdca1304b75f5950d1f59) # tag name is v1.15.2
 set(GOOGLETEST_VERSION_STRING "v1.15.2")
 

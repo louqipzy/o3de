@@ -27,7 +27,7 @@ function(Getminiaudio)
 
     # Part 1:  Where do you get the library from?  Make sure to inform the user of the source of the library and any patches applied.
     include(FetchContent)
-    set(MINIAUDIO_GIT_REPO "https://github.com/mackron/miniaudio.git")
+    set(MINIAUDIO_GIT_REPO "git@github.com:mackron/miniaudio.git")
     set(MINIAUDIO_GIT_TAG "0.11.22")
     set(MINIAUDIO_GIT_HASH "350784a9467a79d0fa65802132668e5afbcf3777") # prefer to pin to hashes for security
     FetchContent_Declare(

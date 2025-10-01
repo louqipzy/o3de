@@ -19,7 +19,7 @@ endif()
 
 # It is still worth notifying people that they are accepting a 3rd Party Library here, and what license it uses, and
 # where to get it.
-message(STATUS "WhiteBox Gem uses OpenMesh-11.0 (BSD-3-Clause) from https://gitlab.vci.rwth-aachen.de:9000/OpenMesh/OpenMesh.git")
+message(STATUS "WhiteBox Gem uses OpenMesh-11.0 (BSD-3-Clause) from git@gitlab.vci.rwth-aachen.de:OpenMesh/OpenMesh.git")
 message(STATUS "    - patched with ${CMAKE_CURRENT_LIST_DIR}/openmesh-o3de-11.0.patch")
 
 # By providing both an "OpenMesh" and a "3rdParty::OpenMesh target, we stop O3DE from doing anything automatically

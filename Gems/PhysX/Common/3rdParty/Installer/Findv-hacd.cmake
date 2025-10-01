@@ -12,5 +12,5 @@ endif()
 
 add_library(3rdParty::v-hacd IMPORTED INTERFACE GLOBAL)
 
-message(STATUS "PhysX gem uses v-hacd v4.1.0 (BSD-3-Clause) https://github.com/kmammou/v-hacd.git")
+message(STATUS "PhysX gem uses v-hacd v4.1.0 (BSD-3-Clause) git@github.com:kmammou/v-hacd.git")
 set(v-hacd_FOUND TRUE)
