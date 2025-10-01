@@ -642,6 +642,8 @@ set(FILES
     Shaders/PostProcessing/Vignette.shader
     Shaders/PostProcessing/WhiteBalance.azsl
     Shaders/PostProcessing/WhiteBalance.shader
+    Shaders/PostProcessing/DirectionalBlur.azsl
+    Shaders/PostProcessing/DirectionalBlur.shader
     Shaders/Reflections/ReflectionCommon.azsli
     Shaders/Reflections/ReflectionComposite.azsl
     Shaders/Reflections/ReflectionComposite.shader

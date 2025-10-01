@@ -289,6 +289,20 @@
                             }
                         }
                     ]
+                },
+                {
+                    "Name": "DirectionalBlurPass",
+                    "TemplateName": "DirectionalBlurTemplate",
+                    "Enabled": true,
+                    "Connections": [
+                        {
+                            "LocalSlot": "InputOutputColor",
+                            "AttachmentRef": {
+                                "Pass": "LightAdaptation",
+                                "Attachment": "Output"
+                            }
+                        }
+                    ]
                 }
             ]
         }

@@ -1,0 +1,26 @@
+{
+    "Type": "JsonSerialization",
+    "Version": 1,
+    "ClassName": "PassAsset",
+    "ClassData": {
+        "PassTemplate": {
+            "Name": "DirectionalBlurTemplate",
+            "PassClass": "ComputePass",
+            "Slots": [
+                {
+                    "Name": "InputOutputColor",
+                    "SlotType": "InputOutput",
+                    "ScopeAttachmentUsage": "Shader"
+                }
+            ],
+            "PassData": {
+                "$type": "ComputePassData",
+                "ShaderAsset": {
+                    "FilePath": "Shaders/PostProcessing/DirectionalBlur.shader"
+                },
+                "FullscreenDispatch": true,
+                "PipelineViewTag": "MainCamera"
+            }
+        }
+    }
+}
