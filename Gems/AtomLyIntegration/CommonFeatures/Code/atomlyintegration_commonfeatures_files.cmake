@@ -173,6 +173,18 @@ set(FILES
     Source/ReflectionProbe/ReflectionProbeComponent.cpp
     Source/ReflectionProbe/ReflectionProbeComponentController.h
     Source/ReflectionProbe/ReflectionProbeComponentController.cpp
+    Source/DDGI/DiffuseGlobalIlluminationComponent.cpp
+    Source/DDGI/DiffuseGlobalIlluminationComponent.h
+    Source/DDGI/DiffuseGlobalIlluminationComponentConfig.cpp
+    Source/DDGI/DiffuseGlobalIlluminationComponentConfig.h
+    Source/DDGI/DiffuseGlobalIlluminationComponentConstants.h
+    Source/DDGI/DiffuseGlobalIlluminationComponentController.cpp
+    Source/DDGI/DiffuseGlobalIlluminationComponentController.h
+    Source/DDGI/DiffuseProbeGridComponent.cpp
+    Source/DDGI/DiffuseProbeGridComponent.h
+    Source/DDGI/DiffuseProbeGridComponentConstants.h
+    Source/DDGI/DiffuseProbeGridComponentController.cpp
+    Source/DDGI/DiffuseProbeGridComponentController.h
     Source/SpecularReflections/SpecularReflectionsComponent.h
     Source/SpecularReflections/SpecularReflectionsComponent.cpp
     Source/SpecularReflections/SpecularReflectionsComponentConfig.h

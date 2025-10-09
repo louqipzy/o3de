@@ -10,6 +10,8 @@ set(FILES
     Include/AtomLyIntegration/CommonFeatures/Material/EditorMaterialSystemComponentNotificationBus.h
     Include/AtomLyIntegration/CommonFeatures/Material/EditorMaterialSystemComponentRequestBus.h
     Include/AtomLyIntegration/CommonFeatures/ReflectionProbe/EditorReflectionProbeBus.h
+    Include/AtomLyIntegration/CommonFeatures/DDGI/EditorDiffuseGlobalIlluminationBus.h
+    Include/AtomLyIntegration/CommonFeatures/DDGI/EditorDiffuseProbeGridBus.h
     Source/Animation/EditorAttachmentComponent.h
     Source/Animation/EditorAttachmentComponent.cpp
     Source/EditorCommonFeaturesSystemComponent.h
@@ -102,6 +104,10 @@ set(FILES
     Source/ScreenSpace/EditorDeferredFogComponent.cpp
     Source/ReflectionProbe/EditorReflectionProbeComponent.h
     Source/ReflectionProbe/EditorReflectionProbeComponent.cpp
+    Source/DDGI/EditorDiffuseGlobalIlluminationComponent.h
+    Source/DDGI/EditorDiffuseGlobalIlluminationComponent.cpp
+    Source/DDGI/EditorDiffuseProbeGridComponent.h
+    Source/DDGI/EditorDiffuseProbeGridComponent.cpp
     Source/SpecularReflections/EditorSpecularReflectionsComponent.h
     Source/SpecularReflections/EditorSpecularReflectionsComponent.cpp
     Source/SkinnedMesh/SkinnedMeshDebugDisplay.h

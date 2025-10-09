@@ -268,6 +268,44 @@ set(FILES
     Source/ReflectionProbe/ReflectionProbeFeatureProcessor.cpp
     Source/ReflectionProbe/ReflectionProbe.h
     Source/ReflectionProbe/ReflectionProbe.cpp
+    Source/DDGI/DiffuseGlobalIlluminationFeatureProcessor.cpp
+    Source/DDGI/DiffuseGlobalIlluminationFeatureProcessor.h
+    Source/DDGI/DiffuseProbeGrid.cpp
+    Source/DDGI/DiffuseProbeGrid.h
+    Source/DDGI/DiffuseProbeGridBlendDistancePass.cpp
+    Source/DDGI/DiffuseProbeGridBlendDistancePass.h
+    Source/DDGI/DiffuseProbeGridBlendIrradiancePass.cpp
+    Source/DDGI/DiffuseProbeGridBlendIrradiancePass.h
+    Source/DDGI/DiffuseProbeGridBorderUpdatePass.cpp
+    Source/DDGI/DiffuseProbeGridBorderUpdatePass.h
+    Source/DDGI/DiffuseProbeGridClassificationPass.cpp
+    Source/DDGI/DiffuseProbeGridClassificationPass.h
+    Source/DDGI/DiffuseProbeGridDownsamplePass.cpp
+    Source/DDGI/DiffuseProbeGridDownsamplePass.h
+    Source/DDGI/DiffuseProbeGridFeatureProcessor.cpp
+    Source/DDGI/DiffuseProbeGridFeatureProcessor.h
+    Source/DDGI/DiffuseProbeGridPreparePass.cpp
+    Source/DDGI/DiffuseProbeGridPreparePass.h
+    Source/DDGI/DiffuseProbeGridQueryPass.cpp
+    Source/DDGI/DiffuseProbeGridQueryPass.h
+    Source/DDGI/DiffuseProbeGridQueryFullscreenPass.cpp
+    Source/DDGI/DiffuseProbeGridQueryFullscreenPass.h
+    Source/DDGI/DiffuseProbeGridRayTracingPass.cpp
+    Source/DDGI/DiffuseProbeGridRayTracingPass.h
+    Source/DDGI/DiffuseProbeGridRelocationPass.cpp
+    Source/DDGI/DiffuseProbeGridRelocationPass.h
+    Source/DDGI/DiffuseProbeGridRenderPass.cpp
+    Source/DDGI/DiffuseProbeGridRenderPass.h
+    Source/DDGI/DiffuseProbeGridTextureReadback.cpp
+    Source/DDGI/DiffuseProbeGridTextureReadback.h
+    Source/DDGI/DiffuseProbeGridVisualizationAccelerationStructurePass.cpp
+    Source/DDGI/DiffuseProbeGridVisualizationAccelerationStructurePass.h
+    Source/DDGI/DiffuseProbeGridVisualizationCompositePass.cpp
+    Source/DDGI/DiffuseProbeGridVisualizationCompositePass.h
+    Source/DDGI/DiffuseProbeGridVisualizationPreparePass.cpp
+    Source/DDGI/DiffuseProbeGridVisualizationPreparePass.h
+    Source/DDGI/DiffuseProbeGridVisualizationRayTracingPass.cpp
+    Source/DDGI/DiffuseProbeGridVisualizationRayTracingPass.h
     Source/SpecularReflections/SpecularReflectionsFeatureProcessor.h
     Source/SpecularReflections/SpecularReflectionsFeatureProcessor.cpp
     Source/ReflectionScreenSpace/ReflectionScreenSpacePass.cpp

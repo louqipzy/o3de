@@ -1,0 +1,89 @@
+{
+    "Type": "JsonSerialization",
+    "Version": 1,
+    "ClassName": "AssetAliasesSourceData",
+    "ClassData": {
+        "AssetPaths": [
+            {
+                "Name": "DiffuseProbeGridRayTracingPassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridRayTracing.pass"
+            },
+            {
+                "Name": "DiffuseProbeGridUpdatePassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridUpdate.pass"
+            },
+            {
+                "Name": "DiffuseProbeGridBlendIrradiancePassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridBlendIrradiance.pass"
+            },
+            {
+                "Name": "DiffuseProbeGridBlendDistancePassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridBlendDistance.pass"
+            },
+            {
+                "Name": "DiffuseProbeGridBorderUpdatePassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridBorderUpdate.pass"
+            },
+            {
+                "Name": "DiffuseProbeGridRelocationPassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridRelocation.pass"
+            },
+            {
+                "Name": "DiffuseProbeGridClassificationPassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridClassification.pass"
+            },
+            {
+                "Name": "DiffuseProbeGridPreparePassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridPrepare.pass"
+            },
+            {
+                "Name": "DiffuseGlobalIlluminationPassTemplate",
+                "Path": "Passes/DDGI/DiffuseGlobalIllumination.pass"
+            },
+            {
+                "Name": "DiffuseProbeGridDownsamplePassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridDownsample.pass"
+            },
+            {
+                "Name": "DiffuseProbeGridRenderPassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridRender.pass"
+            },
+            {
+                "Name": "DiffuseCompositePassTemplate",
+                "Path": "Passes/DDGI/DiffuseComposite.pass"
+            },
+            {
+                "Name": "DiffuseProbeGridQueryPassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridQuery.pass"
+            },
+            {
+                "Name": "DiffuseProbeGridQueryFullscreenPassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridQueryFullscreen.pass"
+            },
+            {
+                "Name": "DiffuseProbeGridQueryFullscreenWithAlbedoPassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridQueryFullscreenWithAlbedo.pass"
+            },
+            {
+                "Name": "DiffuseProbeGridVisualizationPassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridVisualization.pass"
+            },
+            {
+                "Name": "DiffuseProbeGridVisualizationPreparePassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridVisualizationPrepare.pass"
+            },
+            {
+                "Name": "DiffuseProbeGridVisualizationAccelerationStructurePassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridVisualizationAccelerationStructure.pass"
+            },
+            {
+                "Name": "DiffuseProbeGridVisualizationRayTracingPassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridVisualizationRayTracing.pass"
+            },
+            {
+                "Name": "DiffuseProbeGridVisualizationCompositePassTemplate",
+                "Path": "Passes/DDGI/DiffuseProbeGridVisualizationComposite.pass"
+            }
+        ]
+    }
+}

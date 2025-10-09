@@ -15,18 +15,17 @@ namespace AZ
     namespace Render
     {
         // Provides an interface to the Editor Reflection Probe component
-        class EditorReflectionProbeInterface
-            : public ComponentBus
+        class EditorReflectionProbeInterface : public ComponentBus
         {
-            public:
-                static const EBusHandlerPolicy HandlerPolicy = EBusHandlerPolicy::Single;
-                
-                virtual ~EditorReflectionProbeInterface() = default;
-                
-                // Signals the component to bake the reflection probe
-                virtual AZ::u32 BakeReflectionProbe() = 0;
+        public:
+            static const EBusHandlerPolicy HandlerPolicy = EBusHandlerPolicy::Single;
+
+            virtual ~EditorReflectionProbeInterface() = default;
+
+            // Signals the component to bake the reflection probe
+            virtual AZ::u32 BakeReflectionProbe() = 0;
         };
-        
+
         using EditorReflectionProbeBus = AZ::EBus<EditorReflectionProbeInterface>;
-    }
-}
+    } // namespace Render
+} // namespace AZ

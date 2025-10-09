@@ -117,6 +117,8 @@ set(FILES
     Include/Atom/Feature/RayTracing/RayTracingPass.h
     Include/Atom/Feature/RayTracing/RayTracingPassData.h
     Include/Atom/Feature/ReflectionProbe/ReflectionProbeFeatureProcessorInterface.h
+    Include/Atom/Feature/DDGI/DiffuseGlobalIlluminationFeatureProcessorInterface.h
+    Include/Atom/Feature/DDGI/DiffuseProbeGridFeatureProcessorInterface.h
     Include/Atom/Feature/RenderCommon.h
     Include/Atom/Feature/ScreenSpace/DeferredFogParams.inl
     Include/Atom/Feature/ScreenSpace/DeferredFogSettingsInterface.h

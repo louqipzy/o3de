@@ -21,6 +21,8 @@
 #include <ImageBasedLights/ImageBasedLightComponent.h>
 #include <Material/MaterialComponent.h>
 #include <Mesh/MeshComponent.h>
+#include <DDGI/DiffuseGlobalIlluminationComponent.h>
+#include <DDGI/DiffuseProbeGridComponent.h>
 #include <ReflectionProbe/ReflectionProbeComponent.h>
 #include <SpecularReflections/SpecularReflectionsComponent.h>
 #include <OcclusionCullingPlane/OcclusionCullingPlaneComponent.h>
@@ -64,6 +66,8 @@
 #include <Material/EditorMaterialSystemComponent.h>
 #include <Mesh/EditorMeshComponent.h>
 #include <Mesh/EditorMeshSystemComponent.h>
+#include <DDGI/EditorDiffuseGlobalIlluminationComponent.h>
+#include <DDGI/EditorDiffuseProbeGridComponent.h>
 #include <ReflectionProbe/EditorReflectionProbeComponent.h>
 #include <SpecularReflections/EditorSpecularReflectionsComponent.h>
 #include <OcclusionCullingPlane/EditorOcclusionCullingPlaneComponent.h>
@@ -127,6 +131,8 @@ namespace AZ
                         MeshComponent::CreateDescriptor(),
                         PhysicalSkyComponent::CreateDescriptor(),
                         PostFxLayerComponent::CreateDescriptor(),
+                        DiffuseGlobalIlluminationComponent::CreateDescriptor(),
+                        DiffuseProbeGridComponent::CreateDescriptor(),
                         ReflectionProbeComponent::CreateDescriptor(),
                         SpecularReflectionsComponent::CreateDescriptor(),
                         RayTracingDebugComponent::CreateDescriptor(),
@@ -170,6 +176,8 @@ namespace AZ
                         EditorMeshComponent::CreateDescriptor(),
                         EditorPhysicalSkyComponent::CreateDescriptor(),
                         EditorPostFxLayerComponent::CreateDescriptor(),
+                        EditorDiffuseGlobalIlluminationComponent::CreateDescriptor(),
+                        EditorDiffuseProbeGridComponent::CreateDescriptor(),
                         EditorReflectionProbeComponent::CreateDescriptor(),
                         EditorSpecularReflectionsComponent::CreateDescriptor(),
                         RayTracingDebugEditorComponent::CreateDescriptor(),

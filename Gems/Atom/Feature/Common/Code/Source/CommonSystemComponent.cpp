@@ -17,6 +17,8 @@
 #include <AzCore/Serialization/EditContextConstants.inl>
 
 #include <LookupTable/LookupTableAsset.h>
+#include <DDGI/DiffuseGlobalIlluminationFeatureProcessor.h>
+#include <DDGI/DiffuseProbeGridFeatureProcessor.h>
 #include <ReflectionProbe/ReflectionProbeFeatureProcessor.h>
 #include <SpecularReflections/SpecularReflectionsFeatureProcessor.h>
 #include <TransformService/TransformServiceFeatureProcessor.h>
@@ -138,6 +140,8 @@ namespace AZ
             DisplayMapperPassData::Reflect(context);
             ConvertEmissiveUnitFunctor::Reflect(context);
             LookupTableAsset::Reflect(context);
+            DiffuseGlobalIlluminationFeatureProcessor::Reflect(context);
+            DiffuseProbeGridFeatureProcessor::Reflect(context);
             ReflectionProbeFeatureProcessor::Reflect(context);
             SpecularReflectionsFeatureProcessor::Reflect(context);
             CubeMapCaptureFeatureProcessor::Reflect(context);
@@ -213,6 +217,8 @@ namespace AZ
                 AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<ProjectedShadowFeatureProcessor, ProjectedShadowFeatureProcessorInterface>();
                 AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<RayTracingDebugFeatureProcessor, RayTracingDebugFeatureProcessorInterface>();
                 AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<RenderDebugFeatureProcessor, RenderDebugFeatureProcessorInterface>();
+                AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<DiffuseGlobalIlluminationFeatureProcessor, DiffuseGlobalIlluminationFeatureProcessorInterface>();
+                AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<DiffuseProbeGridFeatureProcessor, DiffuseProbeGridFeatureProcessorInterface>();
                 AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<ReflectionProbeFeatureProcessor, ReflectionProbeFeatureProcessorInterface>();
                 AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<SpecularReflectionsFeatureProcessor, SpecularReflectionsFeatureProcessorInterface>();
                 AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<CubeMapCaptureFeatureProcessor, CubeMapCaptureFeatureProcessorInterface>();
@@ -322,6 +328,9 @@ namespace AZ
             // Add SilhouetteComposite pass
             passSystem->AddPassCreator(Name("SilhouetteCompositePass"), &SilhouetteCompositePass::Create);
 
+            // Add 
+
+
             // Add Reflection passes
             passSystem->AddPassCreator(Name("ReflectionScreenSpacePass"), &Render::ReflectionScreenSpacePass::Create);
             passSystem->AddPassCreator(Name("ReflectionScreenSpaceTracePass"), &Render::ReflectionScreenSpaceTracePass::Create);
@@ -358,6 +367,8 @@ namespace AZ
             {
                 AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<RayTracingFeatureProcessor>();
                 AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<SMAAFeatureProcessor>();
+                AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<DiffuseGlobalIlluminationFeatureProcessor>();
+                AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<DiffuseProbeGridFeatureProcessor>();
                 AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<ReflectionProbeFeatureProcessor>();
                 AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<SpecularReflectionsFeatureProcessor>();
                 AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<CubeMapCaptureFeatureProcessor>();
