@@ -87,7 +87,7 @@ namespace AZ::Debug
 
         void DebugBreak()
         {
-            __debugbreak();
+            // __debugbreak();
         }
 #endif // AZ_ENABLE_DEBUG_TOOLS
 

@@ -44,6 +44,19 @@
                     "TemplateName": "RayTracingAccelerationStructurePassTemplate"
                 },
                 {
+                    "Name": "DiffuseProbeGridUpdatePass",
+                    "TemplateName": "DiffuseProbeGridUpdatePassTemplate"
+                    "Connections": [
+                        {
+                            "LocalSlot": "PipelineOutput",
+                            "AttachmentRef": {
+                                "Pass": "PipelineGlobal",
+                                "Attachment": "PipelineOutput"
+                            }
+                        }
+                    ]
+                },
+                {
                     "Name": "DepthPrePass",
                     "TemplateName": "DepthParentTemplate",
                     "Connections": [
