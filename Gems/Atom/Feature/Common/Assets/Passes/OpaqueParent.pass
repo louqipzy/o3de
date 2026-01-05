@@ -63,6 +63,13 @@
                         "Pass": "DiffuseSpecularMergePass",
                         "Attachment": "Output"
                     }
+                },
+                {
+                    "LocalSlot": "DiffuseProbeGridVisualization",
+                    "AttachmentRef": {
+                        "Pass": "DiffuseGlobalIlluminationPass",
+                        "Attachment":  "VisualizationOutput"
+                    }
                 }
             ],
             "PassRequests": [
@@ -232,8 +239,8 @@
                     }
                 },
                 {
-                    "Name": "DiffuseGlobalFullscreenPass",
-                    "TemplateName": "DiffuseGlobalFullscreenPassTemplate",
+                    "Name": "DiffuseGlobalIlluminationPass",
+                    "TemplateName": "DiffuseGlobalIlluminationPassTemplate",
                     "Connections": [
                         {
                             "LocalSlot": "DiffuseInputOutput",
@@ -254,13 +261,6 @@
                             "AttachmentRef": {
                                 "Pass": "Forward",
                                 "Attachment": "NormalOutput"
-                            }
-                        },
-                        {
-                            "LocalSlot": "DepthStencilTextureInput",
-                            "AttachmentRef": {
-                                "Pass": "Forward",
-                                "Attachment": "DepthStencilInputOutput"
                             }
                         },
                         {
@@ -433,7 +433,7 @@
                         {
                             "LocalSlot": "Input",
                             "AttachmentRef": {
-                                "Pass": "DiffuseGlobalFullscreenPass",
+                                "Pass": "DiffuseGlobalIlluminationPass",
                                 "Attachment": "DiffuseInputOutput"
                             }
                         }

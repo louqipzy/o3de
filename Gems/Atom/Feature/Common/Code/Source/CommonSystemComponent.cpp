@@ -17,8 +17,6 @@
 #include <AzCore/Serialization/EditContextConstants.inl>
 
 #include <LookupTable/LookupTableAsset.h>
-#include <DDGI/DiffuseGlobalIlluminationFeatureProcessor.h>
-#include <DDGI/DiffuseProbeGridFeatureProcessor.h>
 #include <ReflectionProbe/ReflectionProbeFeatureProcessor.h>
 #include <SpecularReflections/SpecularReflectionsFeatureProcessor.h>
 #include <TransformService/TransformServiceFeatureProcessor.h>
@@ -103,6 +101,22 @@
 #include <Atom/Feature/ImGui/ImGuiPass.h>
 
 #include <RayTracing/RayTracingAccelerationStructurePass.h>
+#include <DDGI/DiffuseProbeGridPreparePass.h>
+#include <DDGI/DiffuseProbeGridRayTracingPass.h>
+#include <DDGI/DiffuseProbeGridBlendIrradiancePass.h>
+#include <DDGI/DiffuseProbeGridBlendDistancePass.h>
+#include <DDGI/DiffuseProbeGridBorderUpdatePass.h>
+#include <DDGI/DiffuseProbeGridRelocationPass.h>
+#include <DDGI/DiffuseProbeGridClassificationPass.h>
+#include <DDGI/DiffuseProbeGridDownsamplePass.h>
+#include <DDGI/DiffuseProbeGridRenderPass.h>
+#include <DDGI/DiffuseProbeGridVisualizationPreparePass.h>
+#include <DDGI/DiffuseProbeGridVisualizationAccelerationStructurePass.h>
+#include <DDGI/DiffuseProbeGridVisualizationRayTracingPass.h>
+#include <DDGI/DiffuseProbeGridVisualizationCompositePass.h>
+#include <DDGI/DiffuseProbeGridQueryPass.h>
+#include <DDGI/DiffuseProbeGridFeatureProcessor.h>
+#include <DDGI/DiffuseGlobalIlluminationFeatureProcessor.h>
 #include <ReflectionScreenSpace/ReflectionScreenSpacePass.h>
 #include <ReflectionScreenSpace/ReflectionScreenSpaceTracePass.h>
 #include <ReflectionScreenSpace/ReflectionScreenSpaceDownsampleDepthLinearPass.h>
@@ -140,8 +154,6 @@ namespace AZ
             DisplayMapperPassData::Reflect(context);
             ConvertEmissiveUnitFunctor::Reflect(context);
             LookupTableAsset::Reflect(context);
-            DiffuseGlobalIlluminationFeatureProcessor::Reflect(context);
-            DiffuseProbeGridFeatureProcessor::Reflect(context);
             ReflectionProbeFeatureProcessor::Reflect(context);
             SpecularReflectionsFeatureProcessor::Reflect(context);
             CubeMapCaptureFeatureProcessor::Reflect(context);
@@ -159,6 +171,8 @@ namespace AZ
 
             LightingPreset::Reflect(context);
             ModelPreset::Reflect(context);
+            DiffuseProbeGridFeatureProcessor::Reflect(context);
+            DiffuseGlobalIlluminationFeatureProcessor::Reflect(context);
             RayTracingFeatureProcessor::Reflect(context);
             OcclusionCullingPlaneFeatureProcessor::Reflect(context);
             LightingChannelConfiguration::Reflect(context);
@@ -217,12 +231,12 @@ namespace AZ
                 AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<ProjectedShadowFeatureProcessor, ProjectedShadowFeatureProcessorInterface>();
                 AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<RayTracingDebugFeatureProcessor, RayTracingDebugFeatureProcessorInterface>();
                 AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<RenderDebugFeatureProcessor, RenderDebugFeatureProcessorInterface>();
-                AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<DiffuseGlobalIlluminationFeatureProcessor, DiffuseGlobalIlluminationFeatureProcessorInterface>();
-                AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<DiffuseProbeGridFeatureProcessor, DiffuseProbeGridFeatureProcessorInterface>();
                 AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<ReflectionProbeFeatureProcessor, ReflectionProbeFeatureProcessorInterface>();
                 AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<SpecularReflectionsFeatureProcessor, SpecularReflectionsFeatureProcessorInterface>();
                 AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<CubeMapCaptureFeatureProcessor, CubeMapCaptureFeatureProcessorInterface>();
                 AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessor<SMAAFeatureProcessor>();
+                AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<DiffuseGlobalIlluminationFeatureProcessor, DiffuseGlobalIlluminationFeatureProcessorInterface>();
+                AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<DiffuseProbeGridFeatureProcessor, DiffuseProbeGridFeatureProcessorInterface>();
                 AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<RayTracingFeatureProcessor, RayTracingFeatureProcessorInterface>();
                 AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessorWithInterface<OcclusionCullingPlaneFeatureProcessor, OcclusionCullingPlaneFeatureProcessorInterface>();
                 AZ::RPI::FeatureProcessorFactory::Get()->RegisterFeatureProcessor<SplashScreenFeatureProcessor>();
@@ -304,6 +318,22 @@ namespace AZ
             // Add Chromatic Aberration
             passSystem->AddPassCreator(Name("ChromaticAberrationPass"), &ChromaticAberrationPass::Create);
 
+            // Add Diffuse Global Illumination passes
+            passSystem->AddPassCreator(Name("DiffuseProbeGridPreparePass"), &Render::DiffuseProbeGridPreparePass::Create);
+            passSystem->AddPassCreator(Name("DiffuseProbeGridRayTracingPass"), &Render::DiffuseProbeGridRayTracingPass::Create);
+            passSystem->AddPassCreator(Name("DiffuseProbeGridBlendIrradiancePass"), &Render::DiffuseProbeGridBlendIrradiancePass::Create);
+            passSystem->AddPassCreator(Name("DiffuseProbeGridBlendDistancePass"), &Render::DiffuseProbeGridBlendDistancePass::Create);
+            passSystem->AddPassCreator(Name("DiffuseProbeGridBorderUpdatePass"), &Render::DiffuseProbeGridBorderUpdatePass::Create);
+            passSystem->AddPassCreator(Name("DiffuseProbeGridRelocationPass"), &Render::DiffuseProbeGridRelocationPass::Create);
+            passSystem->AddPassCreator(Name("DiffuseProbeGridClassificationPass"), &Render::DiffuseProbeGridClassificationPass::Create);
+            passSystem->AddPassCreator(Name("DiffuseProbeGridDownsamplePass"), &Render::DiffuseProbeGridDownsamplePass::Create);
+            passSystem->AddPassCreator(Name("DiffuseProbeGridRenderPass"), &Render::DiffuseProbeGridRenderPass::Create);
+            passSystem->AddPassCreator(Name("DiffuseProbeGridVisualizationPreparePass"), &Render::DiffuseProbeGridVisualizationPreparePass::Create);
+            passSystem->AddPassCreator(Name("DiffuseProbeGridVisualizationAccelerationStructurePass"), &Render::DiffuseProbeGridVisualizationAccelerationStructurePass::Create);
+            passSystem->AddPassCreator(Name("DiffuseProbeGridVisualizationRayTracingPass"), &Render::DiffuseProbeGridVisualizationRayTracingPass::Create);
+            passSystem->AddPassCreator(Name("DiffuseProbeGridVisualizationCompositePass"), &Render::DiffuseProbeGridVisualizationCompositePass::Create);
+            passSystem->AddPassCreator(Name("DiffuseProbeGridQueryPass"), &Render::DiffuseProbeGridQueryPass::Create);
+
             // Add Motion Blur
             passSystem->AddPassCreator(Name("MotionBlurPass"), &MotionBlurPass::Create);
 
@@ -327,9 +357,6 @@ namespace AZ
 
             // Add SilhouetteComposite pass
             passSystem->AddPassCreator(Name("SilhouetteCompositePass"), &SilhouetteCompositePass::Create);
-
-            // Add 
-
 
             // Add Reflection passes
             passSystem->AddPassCreator(Name("ReflectionScreenSpacePass"), &Render::ReflectionScreenSpacePass::Create);
@@ -367,8 +394,6 @@ namespace AZ
             {
                 AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<RayTracingFeatureProcessor>();
                 AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<SMAAFeatureProcessor>();
-                AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<DiffuseGlobalIlluminationFeatureProcessor>();
-                AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<DiffuseProbeGridFeatureProcessor>();
                 AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<ReflectionProbeFeatureProcessor>();
                 AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<SpecularReflectionsFeatureProcessor>();
                 AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<CubeMapCaptureFeatureProcessor>();
@@ -381,6 +406,8 @@ namespace AZ
                 AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<SkyAtmosphereFeatureProcessor>();
                 AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<OcclusionCullingPlaneFeatureProcessor>();
                 AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<RayTracingDebugFeatureProcessor>();
+                AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<DiffuseGlobalIlluminationFeatureProcessor>();
+                AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<DiffuseProbeGridFeatureProcessor>();
                 AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<RenderDebugFeatureProcessor>();
                 AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<SplashScreenFeatureProcessor>();
                 AZ::RPI::FeatureProcessorFactory::Get()->UnregisterFeatureProcessor<SilhouetteFeatureProcessor>();

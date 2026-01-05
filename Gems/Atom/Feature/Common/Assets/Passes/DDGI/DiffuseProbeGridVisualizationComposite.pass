@@ -13,7 +13,7 @@
                     "ScopeAttachmentUsage": "Shader"
                 },
                 {
-                    "Name": "DepthInput",
+                    "Name": "Depth",
                     "SlotType": "Input",
                     "ScopeAttachmentUsage": "Shader",
                     "ImageViewDesc": {

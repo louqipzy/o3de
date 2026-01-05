@@ -121,8 +121,25 @@ set(FILES
     Passes/DepthOfFieldWriteFocusDepthFromGpu.pass
     Passes/DepthParent.pass
     Passes/DepthToLinearDepth.pass
-    Passes/DepthUpsample.pass
+    Passes/DepthUpsample.pass 
     Passes/DiffuseGlobalFullscreen.pass
+    Passes/DDGI/DiffuseComposite.pass
+    Passes/DDGI/DiffuseGlobalIllumination.pass
+    Passes/DDGI/DiffuseProbeGridBlendDistance.pass
+    Passes/DDGI/DiffuseProbeGridBlendIrradiance.pass
+    Passes/DDGI/DiffuseProbeGridBorderUpdate.pass
+    Passes/DDGI/DiffuseProbeGridClassification.pass
+    Passes/DDGI/DiffuseProbeGridDownsample.pass
+    Passes/DDGI/DiffuseProbeGridPrepare.pass
+    Passes/DDGI/DiffuseProbeGridQuery.pass
+    Passes/DDGI/DiffuseProbeGridRayTracing.pass
+    Passes/DDGI/DiffuseProbeGridRelocation.pass
+    Passes/DDGI/DiffuseProbeGridRender.pass
+    Passes/DDGI/DiffuseProbeGridUpdate.pass
+    Passes/DDGI/DiffuseProbeGridVisualizationAccelerationStructure.pass
+    Passes/DDGI/DiffuseProbeGridVisualizationComposite.pass
+    Passes/DDGI/DiffuseProbeGridVisualizationPrepare.pass
+    Passes/DDGI/DiffuseProbeGridVisualizationRayTracing.pass
     Passes/DiffuseSpecularMerge.pass
     Passes/DisplayMapper.pass
     Passes/DownsampleLuminanceMinAvgMaxCS.pass
@@ -427,6 +444,12 @@ set(FILES
     Shaders/Depth/DepthPass.shader
     Shaders/DiffuseGlobalIllumination/DiffuseGlobalFullscreen.azsl
     Shaders/DiffuseGlobalIllumination/DiffuseGlobalFullscreen.shader
+    Shaders/DDGI/DiffuseComposite.azsl
+    Shaders/DDGI/DiffuseComposite.shader
+    Shaders/DDGI/DiffuseProbeGridDownsample.azsl
+    Shaders/DDGI/DiffuseProbeGridDownsample.shader
+    Shaders/DDGI/DiffuseProbeGridVisualizationComposite.azsl
+    Shaders/DDGI/DiffuseProbeGridVisualizationComposite.shader
     Shaders/ForwardPassSrg.azsl
     Shaders/ForwardPassSrg.shader
     Shaders/ImGui/ImGui.azsl
